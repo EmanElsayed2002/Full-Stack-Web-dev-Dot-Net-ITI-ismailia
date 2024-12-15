@@ -12,4 +12,10 @@ Example: Lab01 - (Eman Elsayed)
 6. (optional) Write comments within your code to explain your logic and approach.
 7. Commit your changes and push them to your forked repository.
 8. Create a pull request (PR) to this repository.
+<<<<<<< HEAD
    ## please follow GuideLines
+=======
+   ## please follow GuideLines
+
+
+>>>>>>> 94a380f100cb2f8ddabfec4d8fc01a07233543bc
