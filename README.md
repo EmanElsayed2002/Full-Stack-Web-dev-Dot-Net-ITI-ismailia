@@ -1,4 +1,4 @@
-Welcome to our repository! Follow these simple steps to share your solutions or contribute to existing ones. Please stick to the guidelines below to ensure consistency and ease of collaboration.
+Welcome to our repository! Follow these simple steps to share your solutions or contribute to existing ones. Please follow to the guidelines below to ensure consistency and ease of collaboration.
 
 Steps for Contribution:
 1. Fork the Repository
