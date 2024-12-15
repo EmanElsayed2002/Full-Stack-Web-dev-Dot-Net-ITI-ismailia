@@ -1,6 +1,6 @@
 Welcome to our repository! Follow these simple steps to share your solutions or contribute to existing ones. Please follow to the guidelines below to ensure consistency and ease of collaboration.
 
-Steps for Contribution:
+## Steps for Contribution:
 1. Fork the Repository
 Start by forking this repository to your GitHub account.
 2. Open the folder of the topic you want to contribute to.
@@ -12,10 +12,6 @@ Example: Lab01 - (Eman Elsayed)
 6. (optional) Write comments within your code to explain your logic and approach.
 7. Commit your changes and push them to your forked repository.
 8. Create a pull request (PR) to this repository.
-<<<<<<< HEAD
-   ## please follow GuideLines
-=======
-   ## please follow GuideLines
 
+## please follow GuideLines
 
->>>>>>> 94a380f100cb2f8ddabfec4d8fc01a07233543bc
