@@ -41,7 +41,9 @@ namespace Lab03
 
         public string Print()
         {
-            return $"Employee Name: {name}\tAge: {age}\tSSN: {ssn}\t{dept.Print()}\thireDate: {hiredate.Print()}";
+            string deptInfo = dept != null ? dept.Print() : "No Department Info";
+            string hireDateInfo = hiredate != null ? hiredate.Print() : "No Hire Date Info";
+            return $"Employee Name: {name}, Age: {age}, SSN: {ssn}, {deptInfo}, Hire Date: {hireDateInfo}";
         }
 
 

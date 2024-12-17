@@ -19,37 +19,78 @@
 
             #region - Try Composition
 
+
+            //Console.WriteLine("Welcome with Composition Relation:) ");
+            //Console.WriteLine("Enter Emplyee SSN: ");
+            //int ssn = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter Emplyee Name: ");
+            //string empName = Console.ReadLine();
+
+            //Console.WriteLine("Enter Emplyee Age: ");
+            //int age = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter Emplyee Department Name: ");
+            //string deptName = Console.ReadLine();
+
+            //Console.WriteLine("Enter Emplyee Department ID: ");
+            //int deptId = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter Emplyee Hire Day: ");
+            //int hireDay = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter Emplyee Hire Month: ");
+            //int hireMonth = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter Emplyee Hire Year: ");
+            //int hireYear = int.Parse(Console.ReadLine());
+
+            //Employee emp = new Employee(ssn, age, empName, deptId, deptName, hireDay, hireMonth, hireYear);
+
+
+            //Console.WriteLine(emp.Print());
+
+            #endregion
+
+            #region Third input Employee
+            Employee[] employee = new Employee[3];
             
-            Console.WriteLine("Welcome with Composition Relation:) ");
-            Console.WriteLine("Enter Emplyee SSN: ");
-            int ssn = int.Parse(Console.ReadLine());
+            for (int i = 0; i < employee.Length; i++)
+            {
+                Console.WriteLine($"Enter Data For Employee#{i + 1}:");
+                Console.WriteLine("Enter Emplyee SSN: ");
+                int ssn = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Name: ");
-            string empName = Console.ReadLine();
+                Console.WriteLine("Enter Emplyee Name: ");
+                string empName = Console.ReadLine();
 
-            Console.WriteLine("Enter Emplyee Age: ");
-            int age = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Emplyee Age: ");
+                int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Department Name: ");
-            string deptName = Console.ReadLine();
+                Console.WriteLine("Enter Emplyee Department Name: ");
+                string deptName = Console.ReadLine();
 
-            Console.WriteLine("Enter Emplyee Department ID: ");
-            int deptId = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Emplyee Department ID: ");
+                int deptId = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Hire Day: ");
-            int hireDay = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Emplyee Hire Day: ");
+                int hireDay = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Hire Month: ");
-            int hireMonth = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Emplyee Hire Month: ");
+                int hireMonth = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Hire Year: ");
-            int hireYear = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Emplyee Hire Year: ");
+                int HireYear = int.Parse(Console.ReadLine());
 
-            Employee emp = new Employee(ssn, age, empName, deptId, deptName, hireDay, hireMonth, hireYear);
-
-
-            Console.WriteLine(emp.Print());
-        
+                
+                employee[i] = new Employee(ssn, age, empName , deptId ,deptName , hireDay , hireMonth , HireYear);
+            }
+            for (int i = 0; i < employee.Length; i++)
+            {
+                Console.WriteLine($"Data Employee #{i + 1}");
+                Console.WriteLine(employee[i].Print());
+                Console.WriteLine("-------------------------------------------");
+            }
             #endregion
         }
     }

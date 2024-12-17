@@ -18,39 +18,81 @@
             #endregion
 
             #region - Try Aggregation
-            Console.WriteLine("Welcome with Aggregation Relation:) ");
-            Console.WriteLine("Enter Emplyee SSN: ");
-            int ssn = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Welcome with Aggregation Relation:) ");
+            //Console.WriteLine("Enter Emplyee SSN: ");
+            //int ssn = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Name: ");
-            string empName = Console.ReadLine();
+            //Console.WriteLine("Enter Emplyee Name: ");
+            //string empName = Console.ReadLine();
 
-            Console.WriteLine("Enter Emplyee Age: ");
-            int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Emplyee Age: ");
+            //int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Department Name: ");
-            string deptName = Console.ReadLine();
+            //Console.WriteLine("Enter Emplyee Department Name: ");
+            //string deptName = Console.ReadLine();
 
-            Console.WriteLine("Enter Emplyee Department ID: ");
-            int deptId = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Emplyee Department ID: ");
+            //int deptId = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Hire Day: ");
-            int hireDay = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Emplyee Hire Day: ");
+            //int hireDay = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Hire Month: ");
-            int hireMonth = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Emplyee Hire Month: ");
+            //int hireMonth = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter Emplyee Hire Year: ");
-            int HireYear = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Emplyee Hire Year: ");
+            //int HireYear = int.Parse(Console.ReadLine());
 
-            Department dept = new Department(deptId, deptName);
-            HireDate hiredate = new HireDate(hireDay , hireMonth , HireYear);
-            Employee emp = new Employee(ssn , age , empName  );
-            emp.SetDept(dept);
-            emp.SetHireDate(hiredate);
-            Console.WriteLine(emp.Print());
+            //Department dept = new Department(deptId, deptName);
+            //HireDate hiredate = new HireDate(hireDay , hireMonth , HireYear);
+            //Employee emp = new Employee(ssn , age , empName  );
+            //emp.SetDept(dept);
+            //emp.SetHireDate(hiredate);
+            //Console.WriteLine(emp.Print());
             #endregion
-            
+
+            #region Third input Employee
+            Employee[] employee = new Employee[3];
+            for (int i = 0; i < employee.Length; i++)
+            {
+                Console.WriteLine($"Enter Data For Employee#{i}:");
+                Console.WriteLine("Enter Emplyee SSN: ");
+                int ssn = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Emplyee Name: ");
+                string empName = Console.ReadLine();
+
+                Console.WriteLine("Enter Emplyee Age: ");
+                int age = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Emplyee Department Name: ");
+                string deptName = Console.ReadLine();
+
+                Console.WriteLine("Enter Emplyee Department ID: ");
+                int deptId = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Emplyee Hire Day: ");
+                int hireDay = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Emplyee Hire Month: ");
+                int hireMonth = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Emplyee Hire Year: ");
+                int HireYear = int.Parse(Console.ReadLine());
+
+                Department dept = new Department(deptId, deptName);
+                HireDate hiredate = new HireDate(hireDay, hireMonth, HireYear);
+                employee[i] = new Employee(ssn, age, empName);
+                employee[i].SetDept(dept);
+                employee[i].SetHireDate(hiredate);
+            }
+            for(int i =0;i < employee.Length; i++)
+            {
+                Console.WriteLine($"Data Employee #{i + 1}");
+                Console.WriteLine(employee[i].Print());
+            }
+            #endregion
+
         }
     }
 }
