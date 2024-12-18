@@ -30,16 +30,14 @@ namespace c_day4lab
         }
         public Employee(int id, string name, int age, decimal salary, string gender, Department department,int day , int month ,int year)
         {
-            this.hireDate =new HireDate();
+            this.hireDate =new HireDate(day,month,year);
             this.id = id;
             this.name = name;
             this.age = age;
             this.salary = salary;
             this.gender = gender;
             this.department = department;
-            this.hireDate.setDay(day);
-            this.hireDate.setMonth(month);
-            this.hireDate.setYear(year);
+         
         }
 
 
