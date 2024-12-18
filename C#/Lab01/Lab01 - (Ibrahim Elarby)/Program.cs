@@ -7,54 +7,40 @@
 
         static void Main(string[] args)
         {
-            #region array of 10 intergers and get min and max value
-            /* int[] numbers = new int[10];
-             int max, min;
-             Console.WriteLine($"enter number 0");
-             numbers[0] = int.Parse(Console.ReadLine());
-             max = numbers[0];
-             min = numbers[0];
-             for (int i = 1; i < numbers.Length; i++)
-             {
-                 Console.WriteLine($"enter number {i}");
-                 numbers[i] = int.Parse(Console.ReadLine());
-                 if (numbers[i] > max)
-                 { max = numbers[i]; }
-                 if (numbers[i] < min)
-                 { min = numbers[i]; }
-             }
-             Console.WriteLine($"the max number is {max}\nthe min number is {min}");*/
+            #region array of any numric data type and get min and max value
+            /*  float[] numbers = new float[5];
+
+              for (int i = 0; i < numbers.Length; i++)
+              {
+                  Console.WriteLine($"enter number {i}");
+                  numbers[i] = float.Parse(Console.ReadLine());
+              }
+
+              Console.WriteLine($"{MyUtility.printMax(numbers)} \n {MyUtility.printMinimum(numbers)}");*/
             #endregion
 
-            #region array of 10 integers and sort it ascending without any built in function
-            /*            int[] numbers = new int[10];
-                        //read array
-                        for (int i = 0; i < numbers.Length; i++)
-                        {
-                            Console.WriteLine($"enter number {i}");
-                            numbers[i] = int.Parse(Console.ReadLine());
-                        }
-                        //sort the array
-                        for (int i = 0; i < numbers.Length; i++)
-                        {
-                            for (int j = 0; j < numbers.Length; j++)
-                            {
-                                if (numbers[i] < numbers[j])
-                                {
-                                    int temp = numbers[i];
-                                    numbers[i] = numbers[j];
-                                    numbers[j] = temp;
-                                }
-                            }
-                        }
-                        //print the array
-                        for (int i = 0; i < numbers.Length; i++)
-                        {
-                            Console.Write($"{numbers[i]}\t");
+            #region array of 10 anytype and sort it ascending or decinding without any built in function
+           /* float[] numbers = new float[5];
+            //read array
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine($"enter number {i}");
+                numbers[i] = float.Parse(Console.ReadLine());
+            }
+            //sort the array
+           
+            //print the array
+            MyUtility.sort(numbers, MyUtility.Way.Ascending);
+            MyUtility.printArray(numbers);
+            MyUtility.sort(numbers, MyUtility.Way.Descending);
+            MyUtility.printArray(numbers);*/
+           /* for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write($"{numbers[i]}\t");
 
-                        }
+            }*/
 
-            */
+
 
             #endregion
 
@@ -164,74 +150,74 @@
             #endregion
 
             #region 5- calculate your birth date
-/*            int currentDay = DateTime.Now.Day;
-            int currentmonth = DateTime.Now.Month;
-            int currentyear = DateTime.Now.Year;
-            int yourDay, yourMonth, yourYear, yourYearAge, yourMonthAge, yourDayAge;
-            do
-            {
-                Console.WriteLine("enter your birthday month");
-                yourMonth = int.Parse(Console.ReadLine());
-            } while (yourMonth < 0 || yourMonth > 12);
-
-            do
-            {
-                Console.WriteLine("enter your birthday year");
-                yourYear = int.Parse(Console.ReadLine());
-            } while (yourYear < 1980 || yourYear > 2024);
-            int maxDay = 0;
-            ///1,3,5,7,8,10,12     31days
-            //////4,6,9,11           30 days
-            //////2      28,29 leap year
-            switch (yourMonth)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 10:
-                case 12:
-                    maxDay = 31;
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    maxDay = 30;
-                    break;
-
-                case 2:
-                    {
-                        if (DateTime.IsLeapYear(yourYear))
+            /*            int currentDay = DateTime.Now.Day;
+                        int currentmonth = DateTime.Now.Month;
+                        int currentyear = DateTime.Now.Year;
+                        int yourDay, yourMonth, yourYear, yourYearAge, yourMonthAge, yourDayAge;
+                        do
                         {
-                            maxDay = 29;
-                        }
-                        else
+                            Console.WriteLine("enter your birthday month");
+                            yourMonth = int.Parse(Console.ReadLine());
+                        } while (yourMonth < 0 || yourMonth > 12);
+
+                        do
                         {
-                            maxDay = 28;
+                            Console.WriteLine("enter your birthday year");
+                            yourYear = int.Parse(Console.ReadLine());
+                        } while (yourYear < 1980 || yourYear > 2024);
+                        int maxDay = 0;
+                        ///1,3,5,7,8,10,12     31days
+                        //////4,6,9,11           30 days
+                        //////2      28,29 leap year
+                        switch (yourMonth)
+                        {
+                            case 1:
+                            case 3:
+                            case 5:
+                            case 7:
+                            case 10:
+                            case 12:
+                                maxDay = 31;
+                                break;
+                            case 4:
+                            case 6:
+                            case 9:
+                            case 11:
+                                maxDay = 30;
+                                break;
+
+                            case 2:
+                                {
+                                    if (DateTime.IsLeapYear(yourYear))
+                                    {
+                                        maxDay = 29;
+                                    }
+                                    else
+                                    {
+                                        maxDay = 28;
+                                    }
+                                }
+                                break;
                         }
-                    }
-                    break;
-            }
-            do
-            {
-                Console.WriteLine("enter your birthday day");
-                yourDay = int.Parse(Console.ReadLine());
-            } while (yourDay > maxDay || yourDay < 0);
-            yourDayAge = currentDay - yourDay;
-            if (yourDayAge < 0)
-            {
-                yourDayAge = maxDay + yourDayAge;
-                currentmonth -= 1;
-            }
-            yourMonthAge = currentmonth - yourMonth;
-            if (yourMonthAge < 0)
-            {
-                yourMonthAge += 12;
-                currentyear -= 1;
-            }
-            yourYearAge = currentyear - yourYear;
-            Console.WriteLine($"you are {yourYearAge} years and {yourMonthAge} month and {yourDayAge} day");*/
+                        do
+                        {
+                            Console.WriteLine("enter your birthday day");
+                            yourDay = int.Parse(Console.ReadLine());
+                        } while (yourDay > maxDay || yourDay < 0);
+                        yourDayAge = currentDay - yourDay;
+                        if (yourDayAge < 0)
+                        {
+                            yourDayAge = maxDay + yourDayAge;
+                            currentmonth -= 1;
+                        }
+                        yourMonthAge = currentmonth - yourMonth;
+                        if (yourMonthAge < 0)
+                        {
+                            yourMonthAge += 12;
+                            currentyear -= 1;
+                        }
+                        yourYearAge = currentyear - yourYear;
+                        Console.WriteLine($"you are {yourYearAge} years and {yourMonthAge} month and {yourDayAge} day");*/
             #endregion
             #region simple calculator
             /*  Char cont = 'n';
