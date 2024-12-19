@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -9,12 +10,7 @@ namespace c_daylab
 {
     class MyUtility
     {
-        //enum to make the code more readable
-        public enum Way
-        {
-            Ascending = 0,
-            Descending , 
-        }
+        
         #region max methods
         // we using Templates to use it with any data type array but whe Implements the interface INumber to use only numric data types like int , float,decimal ,double
         // thats means those types are the only types that implements the interface INumber (supported from .NET v7)
@@ -71,6 +67,12 @@ namespace c_daylab
         }
         #endregion
         #region sorting
+        //enum to make the code more readable
+        public enum Way
+        {
+            Ascending = 0,
+            Descending,
+        }
         //here we will use simple sort method called bubble sort 
         //it find the smallest number in every iteration it has easiest implementation but not most effective algorithm 
         public static void sort<T>(T[]array,Way way)where T : INumber<T>
@@ -89,7 +91,7 @@ namespace c_daylab
             }
         }
         #endregion
-
+        #region print array (not recommended)
         public static void printArray<T>(T[]array)
         {
                 Console.WriteLine("Printing Array");
@@ -99,5 +101,23 @@ namespace c_daylab
             }
             Console.WriteLine();
         }
+        #endregion
+        #region find number
+        //we want to find any type of numric data so we will use data that implements the interface INumber
+        //find number function will return index so it will return integer
+        public static int findNumber<T>(T[] numbers, T number)where T : INumber<T>
+        {
+            for (int i = 0; i < numbers.Length;i++)
+            {
+                if (numbers[i] == number)
+                {
+                    //we will check every number in the array with the target number if equal return index
+                    return i;
+                }
+            }
+            //if the code continued here that means the number is not in this group
+                return -1;
+        }
+        #endregion
     }
 }

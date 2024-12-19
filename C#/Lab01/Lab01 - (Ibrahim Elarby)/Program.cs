@@ -20,56 +20,45 @@
             #endregion
 
             #region array of 10 anytype and sort it ascending or decinding without any built in function
-           /* float[] numbers = new float[5];
+            /* float[] numbers = new float[5];
+             //read array
+             for (int i = 0; i < numbers.Length; i++)
+             {
+                 Console.WriteLine($"enter number {i}");
+                 numbers[i] = float.Parse(Console.ReadLine());
+             }
+             //sort the array
+
+             //print the array
+             MyUtility.sort(numbers, MyUtility.Way.Ascending);
+             MyUtility.printArray(numbers);
+             MyUtility.sort(numbers, MyUtility.Way.Descending);
+             MyUtility.printArray(numbers);*/
+            /* for (int i = 0; i < numbers.Length; i++)
+             {
+                 Console.Write($"{numbers[i]}\t");
+
+             }*/
+
+
+
+            #endregion
+
+            #region array of 10  any type and search number and get index
+        /*    float[] numbers = new float[10];
             //read array
             for (int i = 0; i < numbers.Length; i++)
             {
                 Console.WriteLine($"enter number {i}");
                 numbers[i] = float.Parse(Console.ReadLine());
             }
-            //sort the array
-           
-            //print the array
-            MyUtility.sort(numbers, MyUtility.Way.Ascending);
-            MyUtility.printArray(numbers);
-            MyUtility.sort(numbers, MyUtility.Way.Descending);
-            MyUtility.printArray(numbers);*/
-           /* for (int i = 0; i < numbers.Length; i++)
-            {
-                Console.Write($"{numbers[i]}\t");
-
-            }*/
-
-
-
-            #endregion
-
-            #region array of 10 integers and search number and get index
-            /*int[] numbers = new int[10];
-            //read array
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                Console.WriteLine($"enter number {i}");
-                numbers[i] = int.Parse(Console.ReadLine());
-            }
             //search array
             Console.WriteLine($"enter number you wanrt to search");
-            int number = int.Parse(Console.ReadLine());
-            bool flag = false;
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                if (numbers[i] == number)
-                {
-                    Console.WriteLine($"the index for number {number} is {i}");
-                    flag = true;
-                    break;
-                }
-            }
-            if (!flag)
-            {
-                Console.WriteLine("the number isnot there");
-            }
-*/
+            float number = float.Parse(Console.ReadLine());
+
+            int index = MyUtility.findNumber(numbers, number);
+            Console.WriteLine(index);*/
+
             #endregion
 
             #region 4-matrix  3*2   *  2*1   =3*1  [BONUS]3*3   * 3*2    = 3*2
