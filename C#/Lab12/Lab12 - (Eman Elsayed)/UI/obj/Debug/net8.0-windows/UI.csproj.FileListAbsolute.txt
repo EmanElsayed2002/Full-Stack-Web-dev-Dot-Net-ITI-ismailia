@@ -1,0 +1,8 @@
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.Form1.resources
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.Properties.Resources.resources
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.csproj.GenerateResource.cache
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.AssemblyInfoInputs.cache
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.AssemblyInfo.cs
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.csproj.CoreCompileInputs.cache
+C:\Users\CONNECT\source\repos\Lab12\UI\obj\Debug\net8.0-windows\UI.sourcelink.json

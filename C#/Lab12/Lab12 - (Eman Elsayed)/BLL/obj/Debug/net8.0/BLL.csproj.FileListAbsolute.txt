@@ -1,0 +1,5 @@
+C:\Users\CONNECT\source\repos\Lab12\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CONNECT\source\repos\Lab12\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+C:\Users\CONNECT\source\repos\Lab12\BLL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+C:\Users\CONNECT\source\repos\Lab12\BLL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\CONNECT\source\repos\Lab12\BLL\obj\Debug\net8.0\BLL.sourcelink.json
