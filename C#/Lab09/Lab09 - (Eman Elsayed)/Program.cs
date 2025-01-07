@@ -8,10 +8,8 @@
 
             Employee[] employees =
             {
-                new Employee(1,"Eman",new HireDate(5,15,2024),25000,SecurityLevel.Developer),
-                new Employee(2,"Elsayed",new HireDate(5,15,2024),25000,SecurityLevel.DBA),
-                new Employee(3,"Ali",new HireDate(5,15,2024),25000,SecurityLevel.Secretary),
-                new Employee(4,"Mohamed",new HireDate(5,15,2024),25000,SecurityLevel.Developer|SecurityLevel.DBA|SecurityLevel.Secretary),
+              new Employee(1 , "Eman" , 2000  , new HireDate(1 , 1 , 2000) , SecurityLevel.DBA , Gender.Male)
+
             };
 
             Array.Sort(employees);
