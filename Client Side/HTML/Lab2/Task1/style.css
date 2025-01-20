@@ -1,0 +1,177 @@
+/* Header Section */
+.Container {
+  height: 100vh;
+  width: 80%;
+  margin: 10px auto;
+}
+.Container .header {
+  width: 80%;
+  height: 20vh;
+  margin: 0 auto;
+  text-align: center;
+  /* border: 2px solid red; */
+  overflow: hidden;
+}
+
+.Container .header img {
+  width: 50%;
+  height: 200px;
+}
+/* Nav Section */
+.Container .nav {
+  height: 6vh;
+  background-color: rgb(214, 214, 220);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Container .nav ul {
+  padding: 5px;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.Container .nav ul li {
+  padding: 5px;
+}
+
+.Container .nav ul li a {
+  font-size: 20px;
+}
+
+.Container .nav ul li:hover {
+  background-color: darkcyan;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Container .nav ul li:hover a {
+  color: white;
+}
+
+/* Main Section */
+.main {
+  height: 56vh;
+  background-color: pink;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+}
+
+.main .mainBox {
+  width: 25%;
+  height: 90%;
+  margin: 10px;
+}
+
+.main .mainBox .login {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 30%;
+  text-align: center;
+  /* background-color: red; */
+  border: 2px solid black;
+}
+
+.main .mainBox .login form {
+  padding: 10px;
+}
+
+/* section pagesOnline */
+.main .mainBox .pagesOnline {
+  height: 30%;
+  /* background-color: red; */
+  border: 2px solid black;
+  margin-top: 10px;
+  text-align: center;
+}
+.main .mainBox .pagesOnline .images {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* text-align: center; */
+  align-items: center;
+}
+
+.main .mainBox .pagesOnline .images img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Ifrmae */
+.main .mainBox .iframeVedio {
+  height: 39%;
+  /* background-color: red; */
+  border: 2px solid black;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.main .mainBox .iframeVedio iframe {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.main .porfolio {
+  width: 45%;
+  /* background-color: red; */
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.main .porfolio h2 {
+  text-align: center;
+}
+
+.main .personalAndNews {
+  width: 25%;
+  /* background-color: red; */
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.main .personalAndNews .personalPhonto {
+  width: 100%;
+  height: 50%;
+}
+
+.main .personalAndNews .personalPhonto img {
+  width: 99%;
+  height: 100%;
+  border: 2px solid green;
+}
+
+.main .personalAndNews .news {
+  width: 95%;
+  height: 40%;
+  margin: 10px;
+}
+.main .personalAndNews .news p {
+  width: 95%;
+  height: 100%;
+  border: 2px solid black;
+  padding: 5px;
+  /* margin: 2px; */
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer span {
+  color: brown;
+  font-weight: bold;
+}

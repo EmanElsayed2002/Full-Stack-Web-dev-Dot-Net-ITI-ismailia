@@ -1,0 +1,37 @@
+table {
+  width: 70%;
+  height: 80vh;
+  margin: 50px auto;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  background-color: rgb(153, 153, 190);
+  height: 80px;
+  color: white;
+}
+
+tr .comment {
+  color: rgb(109, 103, 103);
+  text-decoration: underline;
+  font-size: 24px;
+  text-align: center;
+  font-style: italic;
+}
+
+.makeColorbabyBlue {
+  background-color: rgb(80, 104, 154);
+  color: white;
+}
+
+.makeColorbabyBlueLight {
+  background-color: rgb(68, 75, 91);
+  color: white;
+}
