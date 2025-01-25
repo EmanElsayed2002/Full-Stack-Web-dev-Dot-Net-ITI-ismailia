@@ -35,3 +35,8 @@ tr .comment {
   background-color: rgb(68, 75, 91);
   color: white;
 }
+
+th {
+  background-color: rgb(132, 151, 151);
+  border: none;
+}

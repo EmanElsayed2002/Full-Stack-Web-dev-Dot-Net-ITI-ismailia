@@ -1,0 +1,10 @@
+var image = document.getElementById("header");
+// image.classList.add("alignRight");
+image.style.textAlign = "right";
+var ul = document.getElementById("nav");
+// ul.classList.add("alterUL");
+ul.style.listStyle = "circle";
+ul.style.listStylePosition = "inside";
+var ele = document.createElement("div");
+ele.innerHTML = "<img src='image.png' alt='CopiedImage' />";
+document.body.append(ele);

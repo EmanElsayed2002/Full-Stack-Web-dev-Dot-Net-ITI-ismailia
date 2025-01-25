@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+  </head>
+  <body>
+    <script>
+      alert("Welcome to my site");
+      var res = prompt("Enter Your Name: ");
+      if (res) {
+        var userChoice = prompt("choose either (red, green or blue color)");
+        while (
+          userChoice.toLowerCase() != "green" &&
+          userChoice.toLowerCase() != "blue" &&
+          userChoice.toLowerCase() != "red"
+        ) {
+          userChoice = prompt(
+            "please Enter correct!! choose either (red, green or blue color)"
+          );
+        }
+        userChoice.toLowerCase();
+
+        if (userChoice == "green") {
+          document.write('<h3 style="color: green">welcome ' + res + "</h3>");
+        } else if (userChoice == "red") {
+          document.write('<h3 style="color: red">welcome ' + res + "</h3>");
+        } else {
+          document.write('<h3 style="color: blue">welcome ' + res + "</h3>");
+        }
+      } else {
+        alert("GoodBye!!!");
+      }
+    </script>
+  </body>
+</html>

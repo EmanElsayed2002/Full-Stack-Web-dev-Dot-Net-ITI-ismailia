@@ -1,0 +1,8 @@
+.alignRight {
+  text-align: right;
+}
+
+.alterUL {
+  list-style: circle;
+  list-style-position: inside;
+}
