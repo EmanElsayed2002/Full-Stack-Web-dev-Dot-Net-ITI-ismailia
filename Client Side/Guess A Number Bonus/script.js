@@ -1,6 +1,6 @@
-var actualNumber = Math.floor(Math.random() * 20) + 5;
 
 do {
+var actualNumber = Math.floor(Math.random() * 20) + 5;
   do {
     var prmpt = prompt("Please Enter Your Number 👀");
   } while (isNaN(prmpt));
