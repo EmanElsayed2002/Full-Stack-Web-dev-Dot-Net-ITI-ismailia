@@ -10,6 +10,7 @@
   background: #333333;
   width: 100%;
   position: sticky;
+  z-index: 1;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -292,6 +293,11 @@
   padding: 20px 35px;
   background-color: #edf4f6;
 }
+
+.Courses-details input:focus {
+  border-bottom: 2px solid #d82a4e;
+}
+
 .Courses-details div {
   background-color: #d82a4e;
   padding: 20px 35px;
@@ -308,7 +314,7 @@
   text-align: center;
 }
 
-.filters {
+.filters ul {
   list-style: none;
   text-align: center;
   width: 50%;
@@ -329,11 +335,11 @@
 .course-card {
   display: flex;
   flex-direction: column;
-  width: calc(95% / 4);
+  width: calc(95% / 3);
   position: relative;
 }
 
-.cards-for-all-courses {
+.cards-for-all-courses .container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -402,6 +408,9 @@
   margin-bottom: 30px;
   padding: 20px;
 }
+.signForms input:focus {
+  border-bottom: 2px solid #d82a4e;
+}
 .upload {
   background-color: #3e3e3e;
   width: 150px;
@@ -437,8 +446,8 @@
 .register-btn {
   text-align: center;
   background-color: #d82a4e;
-  padding: 10px;
-  width: 150px;
+  padding: 20px 40px;
+  width: 200px;
   position: relative;
   left: 45%;
 }
@@ -452,8 +461,8 @@ hr {
   background-color: #d82a4e;
 }
 
-.footer {
-  height: 300px;
+.footer .container {
+  height: 250px;
   display: flex;
   justify-content: space-around;
   margin-bottom: 50px;
@@ -468,6 +477,11 @@ hr {
   padding-top: 30px;
 }
 
+.contactLessMargin ul {
+  list-style: none;
+  padding-top: 30px;
+}
+
 .contact ul li {
   margin-bottom: 27px;
   position: relative;
@@ -476,8 +490,20 @@ hr {
   font-weight: 500;
   color: #878787;
 }
+
+.contactLessMargin ul li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #878787;
+}
 .contact ul {
   width: 150px;
+}
+.contactLessMargin ul {
+  width: 200px;
 }
 
 .contact ul.contact-bullets li::after {
@@ -496,10 +522,13 @@ hr {
   margin-bottom: 30px;
 }
 
+.contactLessMargin h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
 .contact::before {
   content: "";
-
-  /* display: ; */
 }
 
 .copyrights {
@@ -520,19 +549,28 @@ hr {
   text-decoration: none;
 }
 
-.contact input {
+.contactLessMargin input {
   background-color: #edf4f6;
   border: none;
   outline: none;
   padding: 20px;
 }
 
-.contact div {
+.contactLessMargin input:focus {
+  border-bottom: 2px solid #d82a4e;
+}
+
+.contactLessMargin div {
   background-color: #d82a4e;
   padding: 20px;
 }
 
-.contact div a {
+.contactLessMargin div a {
   text-decoration: none;
   color: white;
+}
+
+.contactLessMargin {
+  padding: 20px;
+  width: calc(95% / 5);
 }

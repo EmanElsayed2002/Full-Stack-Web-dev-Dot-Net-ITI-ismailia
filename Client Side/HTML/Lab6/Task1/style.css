@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.origin {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  text-align: center;
+  line-height: 100px;
+}

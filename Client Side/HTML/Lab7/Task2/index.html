@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task2</title>
+  </head>
+  <body>
+    <div class="range-container">
+      <span>Red</span>
+      <input
+        type="range"
+        name="redColor"
+        id="redColor"
+        min="0"
+        max="255"
+        step="1"
+        value="126"
+      />
+
+      <span>Green</span>
+      <input
+        type="range"
+        id="GreenColor"
+        min="0"
+        max="255"
+        step="1"
+        value="126"
+      />
+
+      <span>Blue</span>
+      <input
+        type="range"
+        id="BlueColor"
+        min="0"
+        max="255"
+        step="1"
+        value="126"
+      />
+      <p id="content">
+        Change the 3 Color Ranges above and observe my color change
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

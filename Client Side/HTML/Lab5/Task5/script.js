@@ -1,6 +1,6 @@
 var image = document.getElementById("header");
-// image.classList.add("alignRight");
-image.style.textAlign = "right";
+image.classList.add("alignRight");
+// image.style.textAlign = "right";
 var ul = document.getElementById("nav");
 // ul.classList.add("alterUL");
 ul.style.listStyle = "circle";

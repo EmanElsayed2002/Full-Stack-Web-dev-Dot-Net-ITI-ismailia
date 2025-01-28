@@ -1,26 +1,46 @@
 do {
-  var prmpt = prompt("Enter Your Birth Date (DD-MM-YYYY)");
+  try {
+    var userInput = prompt(
+      "Enter Your Birth Date in the following format (DD-MM-YYYY). Example: 22-01-1999"
+    );
+    if (!isValidDate(userInput)) {
+      throw new Error("Wrong Date Format");
+    }
 
-  var bool =
-    prmpt.length == 10 &&
-    prmpt.split("-").length == 3 &&
-    check(0, 2, 1, 30) &&
-    check(3, 5, 1, 12) &&
-    check(6, 11, 1000, 2025);
-  console.log(check(6, 11, 1000, 2025));
-  var day = Number(prmpt.slice(0, 2));
-  var month = Number(prmpt.slice(3, 5));
-  var year = Number(prmpt.slice(6, 11));
-} while (!bool);
+    var day = Number(userInput.slice(0, 2));
+    var month = Number(userInput.slice(3, 5));
+    var year = Number(userInput.slice(6, 10));
+    var userDate = new Date(year, month - 1, day);
+    alert("Valid Date: " + userDate.toDateString());
+    break;
+  } catch (error) {
+    alert(error.message);
+  }
+} while (true);
 
-var NewDate = new Date(year, month, day);
-// console.log(NewDate);
-document.write("<h3>" + NewDate + "</h3>");
+function isValidDate(dateStr) {
+  if (dateStr.length !== 10) return false;
 
-function check(start, end, startvalue, endvalue) {
+  if (dateStr[2] !== "-" || dateStr[5] !== "-") return false;
+
+  var day = dateStr.slice(0, 2);
+  var month = dateStr.slice(3, 5);
+  var year = dateStr.slice(6, 10);
+
+  if (isNaN(day) || isNaN(month) || isNaN(year)) return false;
+
+  day = Number(day);
+  month = Number(month);
+  year = Number(year);
+
+  if (day < 1 || day > 31) return false;
+  if (month < 1 || month > 12) return false;
+  if (year < 1000 || year > 2025) return false;
+
+  var testDate = new Date(year, month - 1, day);
   return (
-    !isNaN(prmpt.slice(start, end)) &&
-    Number(prmpt.slice(start, end)) >= startvalue &&
-    Number(prmpt.slice(start, end) <= endvalue)
+    testDate.getDate() === day &&
+    testDate.getMonth() === month - 1 &&
+    testDate.getFullYear() === year
   );
 }
