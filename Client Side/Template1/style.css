@@ -367,8 +367,8 @@
 .info img {
 }
 
-.form-section {
-  width: 100%;
+.form-section .container {
+  width: 80%;
   height: 900px;
   background-color: #d82a4e;
   display: flex;
@@ -378,7 +378,7 @@
 .form-section .signUp-section {
   width: 50%;
   color: white;
-  padding: 100px;
+  padding: 80px;
 }
 
 .form-section .signUp-section h5 {
