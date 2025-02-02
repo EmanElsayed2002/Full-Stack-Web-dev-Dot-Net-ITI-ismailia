@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .road {
+      margin: 100px auto;
+      background-color: gray;
+      height: 300px;
+      position: relative;
+    }
+
+    .line1,
+    .line2 {
+      position: absolute;
+      top: 80%;
+      height: 10px;
+      width: 100%;
+      padding: 10px;
+      left: 0;
+      border: 5px dashed white;
+    }
+    .line2 {
+      top: 60%;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 35%;
+      transform: translateX(-50%);
+      animation: go-return 6s ease-in-out infinite forwards;
+    }
+    @keyframes go-return {
+      0% {
+        top: 35%;
+        left: -10%;
+        transform: rotateY(0deg);
+      }
+      50% {
+        top: 35%;
+        left: 95%;
+        transform: rotateY(0deg);
+      }
+      51% {
+        top: 15%;
+        left: 95%;
+        transform: rotateY(180deg);
+      }
+      95% {
+        top: 15%;
+        left: -10%;
+        transform: rotateY(180deg);
+      }
+      100% {
+        left: -10%;
+        transform: rotateY(0deg);
+      }
+    }
+    .turn {
+      /* height: 50px; */
+      background-color: green;
+      border-radius: 50%;
+      text-align: center;
+      width: fit-content;
+      padding: 20px;
+      color: white;
+      margin: 50px auto;
+      animation: top-and-down 1s linear infinite forwards;
+    }
+    @keyframes top-and-down {
+      0% {
+        transform: perspective(100px) skewX(45deg);
+      }
+      50% {
+        transform: perspective(100px) skewX(-45deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="turn-continer">
+      <div class="turn">لف وارجع تاني</div>
+    </div>
+    <div class="road">
+      <div class="line1"></div>
+      <div class="line2"></div>
+
+      <img
+        src="../images/—Pngtree—cartoon characters ride bicycles_4141664.png"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

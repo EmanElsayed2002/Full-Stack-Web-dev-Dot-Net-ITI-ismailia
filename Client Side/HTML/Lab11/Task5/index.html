@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+      form {
+        background-color: #404448;
+        width: 60%;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* text-align: left; */
+        /* background: #f9f9f9; */
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: white;
+      }
+      label {
+        text-align: left;
+        margin: 10px 85px;
+        color: white;
+        font-weight: bold;
+      }
+      input,
+      select {
+        border: none;
+        outline: none;
+        width: 80%;
+        padding: 8px;
+        margin: 0px auto;
+      }
+      input::placeholder {
+        color: #d82a4e;
+      }
+      button {
+        padding: 12px 40px;
+        margin: 15px auto;
+        background: #c94e67;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: max-content;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      button:hover {
+        background: #d82a4e;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+      <label>Name:</label>
+      <input type="text" id="name" placeholder="Username" />
+      <span id="nameError" class="error"></span>
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="YourEmail" />
+      <span id="emailError" class="error"></span>
+
+      <label>Mobile:</label>
+      <input type="text" id="mobile" placeholder="YourMobile" />
+      <span id="mobileError" class="error"></span>
+
+      <label>Gender:</label>
+      <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" placeholder="YourAddress" />
+      <span id="addressError" class="error"></span>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var name = document.getElementById("name").value.trim();
+          var email = document.getElementById("email").value.trim();
+          var mobile = document.getElementById("mobile").value.trim();
+          var gender = document.getElementById("gender").value;
+          var address = document.getElementById("address").value.trim();
+
+          var nameError = document.getElementById("nameError");
+          var emailError = document.getElementById("emailError");
+          var mobileError = document.getElementById("mobileError");
+          var addressError = document.getElementById("addressError");
+
+          var isValid = true;
+
+          if (name === "") {
+            nameError.innerText = "Name is required";
+            isValid = false;
+          } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+            nameError.innerText = "Name must contain only letters";
+            isValid = false;
+          } else {
+            nameError.innerText = "";
+          }
+
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            emailError.innerText = "Enter a valid email";
+            isValid = false;
+          } else {
+            emailError.innerText = "";
+          }
+
+          var mobileRegex = /^\d{11}$/;
+          if (!mobileRegex.test(mobile)) {
+            mobileError.innerText = "Enter a valid 11-digit number!";
+            isValid = false;
+          } else {
+            mobileError.innerText = "";
+          }
+
+          if (address === "") {
+            addressError.innerText = "Address is required!";
+            isValid = false;
+          } else {
+            addressError.innerText = "";
+          }
+
+          if (isValid) {
+            window.location.href = `welcome.html?name=${encodeURIComponent(
+              name
+            )}&email=${encodeURIComponent(email)}&mobile=${encodeURIComponent(
+              mobile
+            )}&gender=${encodeURIComponent(
+              gender
+            )}&address=${encodeURIComponent(address)}`;
+          }
+        });
+    </script>
+  </body>
+</html>

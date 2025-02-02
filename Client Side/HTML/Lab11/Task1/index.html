@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      .gallery {
+        width: 400px;
+        height: 300px;
+        margin: 20px auto;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .buttons {
+        margin-top: 10px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 15px;
+        border: none;
+        background-color: steelblue;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img id="galleryImage" src="./images/th (1).jpeg" />
+    </div>
+
+    <div class="buttons">
+      <button id="prevImage">Previous</button>
+      <button id="nextImage">Next</button>
+      <button id="startSlideshow">Slideshow</button>
+      <button id="stopSlideshow">Stop</button>
+    </div>
+
+    <script>
+      var prev = document.getElementById("prevImage");
+      var next = document.getElementById("nextImage");
+      var startslideshow = document.getElementById("startSlideshow");
+      var stopslideshow = document.getElementById("stopSlideshow");
+      let images = [
+        "./images/th (1).jpeg",
+        "./images/th (2).jpeg",
+        "./images/th (3).jpeg",
+        "./images/th (6).jpeg",
+        "./images/th.jpeg",
+      ];
+      var index = 0;
+      var slideshowInterval;
+
+      next.addEventListener("click", () => {
+        if (index < images.length - 1) {
+          document.getElementById("galleryImage").src = images[++index];
+        }
+      });
+
+      prev.addEventListener("click", () => {
+        if (index > 0) {
+          document.getElementById("galleryImage").src = images[--index];
+        }
+      });
+
+      startSlideshow.addEventListener("click", () => {
+        clearInterval(slideshowInterval);
+        slideshowInterval = setInterval(() => {
+          index = (index + 1) % images.length;
+          document.getElementById("galleryImage").src = images[index];
+        }, 2000);
+      });
+
+      stopSlideshow.addEventListener("click", () => {
+        clearInterval(slideshowInterval);
+      });
+    </script>
+  </body>
+</html>

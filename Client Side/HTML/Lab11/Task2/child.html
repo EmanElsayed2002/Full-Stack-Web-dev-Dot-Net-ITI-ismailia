@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Child Window</title>
+    <style>
+      body {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 20px;
+      }
+      span {
+        font-weight: bold;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <span id="message"></span>
+    <script>
+      let msg = "Welcome";
+      let i = 0;
+      function typeMessage() {
+        if (i < msg.length) {
+          document.getElementById("message").innerHTML += msg[i];
+          i++;
+          setTimeout(typeMessage, 200);
+        }
+      }
+      typeMessage();
+      setTimeout(() => window.close(), 5000);
+    </script>
+  </body>
+</html>

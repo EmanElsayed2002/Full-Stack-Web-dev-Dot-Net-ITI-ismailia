@@ -3,14 +3,10 @@ console.log(input);
 
 var regExp = /[^0-9.-]/g;
 var letters = "";
-input.addEventListener("input", (e) => {
-  console.log(e.target.value);
-  if (!isNaN(e.target.value)) {
-    letters += e.target.value;
+input.addEventListener("keydown", (e) => {
+  console.log(e.keyCode);
+  if (!isNaN(e.key) || e.keyCode == 8) {
   } else {
-    letters += "";
+    e.preventDefault();
   }
-
-  input.value = letters;
-  const value = e.target.value;
 });

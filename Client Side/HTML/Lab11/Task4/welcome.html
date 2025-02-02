@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+      .container {
+        background: #d82a4e;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        text-align: center;
+      }
+      h1 {
+        color: steelblue;
+      }
+      p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome, <span id="userName"></span>!</h1>
+    <div class="container">
+      <h2>Your Information</h2>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>Mobile:</strong> <span id="userMobile"></span></p>
+      <p><strong>Gender:</strong> <span id="userGender"></span></p>
+      <p><strong>Address:</strong> <span id="userAddress"></span></p>
+    </div>
+
+    <script>
+      var params = new URLSearchParams(window.location.search);
+
+      var name = params.get("name");
+      var email = params.get("email");
+      var mobile = params.get("mobile");
+      var gender = params.get("gender");
+      var address = params.get("address");
+
+      document.getElementById("userName").innerText = name;
+      document.getElementById("userEmail").innerText = email;
+      document.getElementById("userMobile").innerText = mobile;
+      document.getElementById("userGender").innerText = gender;
+      document.getElementById("userAddress").innerText = address;
+    </script>
+  </body>
+</html>

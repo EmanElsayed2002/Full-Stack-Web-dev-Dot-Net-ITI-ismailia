@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent Window</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: steelblue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Parent Window</h1>
+    <button onclick="openChildWindow()">Open Child Window</button>
+
+    <script>
+      function openChildWindow() {
+        let child = window.open("./child.html", "", "width=400,height=300");
+      }
+    </script>
+  </body>
+</html>

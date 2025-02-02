@@ -2,7 +2,7 @@ var answerDisplay = document.getElementById("Answer");
 var flag = false;
 var expre = "";
 function EnterNumber(value) {
-  if (isNaN(expre[expre.length - 1]) || flag) {
+  if (expre[expre.length - 1] == "=" || flag) {
     answerDisplay.value = "";
     flag = false;
   }
@@ -14,7 +14,7 @@ function EnterNumber(value) {
 
 function EnterOperator(value) {
   expre += value;
-  answerDisplay.value = "";
+  // answerDisplay.value = "";
   answerDisplay.value += value;
   return value;
 }

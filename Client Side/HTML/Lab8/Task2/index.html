@@ -127,7 +127,7 @@
       function getPosition(position) {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        time = new Date(position.timestamp).toLocaleString();
+        time = new Date(position.timestamp);
         console.log("Latitude:", lat);
         console.log("Longitude:", lon, time);
         initMap(lat, lon);

@@ -66,13 +66,13 @@
       remCheckbox.addEventListener("change", validateForm);
 
       document.getElementById("form").addEventListener("submit", (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         if (remCheckbox.checked) {
           localStorage.setItem("username", usrInput.value);
           localStorage.setItem("email", emailInput.value);
           alert("Data saved to Local storage!");
         } else {
-          alert("Data not Saved to Local Storage");
+          // alert("Data not Saved to Local Storage");
         }
       });
     </script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock App</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+      #clock {
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: steelblue;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: steelblue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Digital Clock</h1>
+    <button id="startClock">Start Clock</button>
+    <div id="clock">00:00:00</div>
+
+    <script>
+      var clockInterval;
+      var btn = document.getElementById("startClock");
+      btn.addEventListener("click", () => {
+        alert("Clock Started");
+        btn.style.display = "none";
+        // var now = new Date();
+        // var timeString = now.toLocaleTimeString();
+        // document.getElementById("clock").innerText = timeString;
+        updateClock();
+        clockInterval = setInterval(updateClock, 1000);
+      });
+
+      function updateClock() {
+        let now = new Date();
+        let timeString = now.toLocaleTimeString();
+        document.getElementById("clock").innerText = timeString;
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.altKey && event.key === "w") {
+          clearInterval(clockInterval);
+          alert("Clock Stopped");
+        }
+      });
+    </script>
+  </body>
+</html>

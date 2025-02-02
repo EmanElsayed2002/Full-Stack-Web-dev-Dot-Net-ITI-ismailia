@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(201, 166, 234);
+    }
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 150px;
+      margin: 100px auto;
+      align-items: center;
+    }
+    input {
+      border: none;
+      outline: none;
+      width: 50%;
+      padding: 10px;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+    }
+    input:hover {
+      border-bottom: 2px solid rgb(219, 24, 200);
+    }
+    .buttons {
+      width: 50%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      padding: 10px;
+      width: 25%;
+      color: white;
+      background-color: rgb(219, 24, 200);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .hidden {
+      display: none;
+    }
+    .error {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: red;
+      font-weight: bold;
+    }
+    table {
+      width: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: rgb(201, 166, 234);
+    }
+    th,
+    td {
+      border-bottom: 1px solid rgb(219, 24, 200);
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="inputs">
+      <input type="text" placeholder="Name" id="username" />
+      <span id="name-error" class="error"></span>
+      <input type="text" placeholder="Age" id="age" />
+      <span id="age-error" class="error"></span>
+      <input type="email" placeholder="Email" id="email" />
+      <span id="email-error" class="error"></span>
+    </div>
+    <div class="buttons">
+      <button id="add">Add</button>
+      <button id="reset">Reset</button>
+    </div>
+    <div class="table hidden">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <script>
+      var usernameInput = document.getElementById("username");
+      var ageInput = document.getElementById("age");
+      var emailInput = document.getElementById("email");
+
+      var addBtn = document.getElementById("add");
+      var resetBtn = document.getElementById("reset");
+      var tableDiv = document.querySelector(".table");
+      var rows = document.getElementById("rows");
+
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+      var ageError = document.getElementById("age-error");
+
+      resetBtn.addEventListener("click", () => {
+        usernameInput.value = "";
+        ageInput.value = "";
+        emailInput.value = "";
+        nameError.innerText = "";
+        ageError.innerText = "";
+        emailError.innerText = "";
+      });
+
+      addBtn.addEventListener("click", () => {
+        var name = usernameInput.value.trim();
+        var age = ageInput.value.trim();
+        var email = emailInput.value.trim();
+
+        if (
+          NameValidation(name) &
+          AgeValidation(age) &
+          EmailValidation(email)
+        ) {
+          tableDiv.classList.remove("hidden");
+          var newRow = document.createElement("tr");
+          newRow.innerHTML = `<td>${name}</td><td>${age}</td><td>${email}</td>`;
+          rows.append(newRow);
+
+          usernameInput.value = "";
+          ageInput.value = "";
+          emailInput.value = "";
+        }
+      });
+
+      function NameValidation(name) {
+        if (name === "") {
+          nameError.innerText = "Name is required";
+          return false;
+        }
+        if (!/^[a-zA-Z\s]+$/.test(name)) {
+          nameError.innerText = "Name must contain only letters";
+          return false;
+        }
+        nameError.innerText = "";
+        return true;
+      }
+
+      function AgeValidation(age) {
+        if (age === "") {
+          ageError.innerText = "Age is required";
+          return false;
+        }
+        if (!/^\d+$/.test(age) || age < 1 || age > 100) {
+          ageError.innerText = "Enter a valid age (1-100)";
+          return false;
+        }
+        ageError.innerText = "";
+        return true;
+      }
+
+      function EmailValidation(email) {
+        if (email === "") {
+          emailError.innerText = "Email is required";
+          return false;
+        }
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+          emailError.innerText = "Enter a valid email";
+          return false;
+        }
+        emailError.innerText = "";
+        return true;
+      }
+    </script>
+  </body>
+</html>

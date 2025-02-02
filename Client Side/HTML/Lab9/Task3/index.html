@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task3</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .main-page {
+      position: relative;
+      background-image: url(images/landing.jpg);
+      height: 100vh;
+      width: 100vw;
+      clip-path: polygon(0 0, 100% 0, 100% 71%, 49% 89%, 49% 89%, 0 72%);
+    }
+    .header {
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      display: flex;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      padding: 12px 24px;
+      color: black;
+    }
+    .menu {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+    }
+    .main-text {
+      position: absolute;
+      top: 100px;
+      left: 30%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .main-text h2 {
+      font-size: 40px;
+      color: white;
+    }
+
+    .main-text p {
+      margin-top: 40px;
+      width: 500px;
+      font-size: 24px;
+      line-height: 1.7;
+      color: rgb(66, 53, 53);
+    }
+
+    .main-text div {
+      text-align: center;
+      width: 200px;
+      padding: 10px;
+      border: 2px solid white;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <ul class="menu">
+        <li><a href="">Category #1</a></li>
+        <li><a href="">Category #2</a></li>
+        <li><a href="">Category #3</a></li>
+        <li><a href="">Category #4</a></li>
+      </ul>
+      <div class="other-links">
+        <a href="">Get Genesis Now!</a>
+      </div>
+    </div>
+    <div class="main-page">
+      <div class="main-text">
+        <h2>Home Features</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
+          necessitatibus provident sit nostrum cupiditate blanditiis temporibus
+          quam quo nulla? Quaerat sunt culpa voluptates doloremque eaque
+          reprehenderit nisi debitis alias fugit.
+        </p>
+        <div>Get Started</div>
+      </div>
+    </div>
+  </body>
+</html>
