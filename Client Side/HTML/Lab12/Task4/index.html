@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        width: 80%;
+        max-width: 800px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .post {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+      }
+      .post h2 {
+        font-size: 22px;
+        color: #2c3e50;
+        margin-bottom: 5px;
+      }
+      .post p {
+        color: #7f8c8d;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center; color: #34495e">Posts</h1>
+      <button id="click">Click</button>
+      <div id="content"></div>
+    </div>
+
+    <script>
+      document.getElementById("click").addEventListener("click", function () {
+        const contentDiv = document.getElementById("content");
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("get", "https://jsonplaceholder.typicode.com/posts");
+
+        xhr.onload = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+              const posts = JSON.parse(xhr.responseText);
+              contentDiv.innerHTML = "";
+
+              posts.forEach((post) => {
+                const postDiv = document.createElement("div");
+                postDiv.classList.add("post");
+                postDiv.innerHTML = `<h2>${post.title}</h2><p>${post.body}</p>`;
+                contentDiv.append(postDiv);
+              });
+            } else {
+              contentDiv.innerHTML = `<p class="error">Failed to fetch posts</p>`;
+            }
+          }
+        };
+
+        xhr.onerror = function () {
+          contentDiv.innerHTML = `<p class="error">Error! Please try again.</p>`;
+        };
+
+        xhr.send();
+      });
+    </script>
+  </body>
+</html>
