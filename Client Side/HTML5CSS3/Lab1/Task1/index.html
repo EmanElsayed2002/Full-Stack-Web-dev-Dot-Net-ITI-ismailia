@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Forms Validation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h3>Change Email Address</h3>
+      <form id="form">
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          required
+          autocomplete="off"
+          pattern="[a-zA-Z]+"
+          title="The username must only contain alphabetical characters."
+        />
+        <span
+          >The required username may only be a series of alphabetical
+          characters.</span
+        >
+        <input
+          type="email"
+          id="email"
+          required
+          autocomplete="off"
+          placeholder="Email"
+          pattern="[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]{2,5}"
+          title="The email address must not include any special character other than the @ sign."
+        />
+        <span
+          >The email address must not include any special character other than
+          the @ sign.</span
+        >
+        <div class="remember">
+          <input type="checkbox" id="remember" />
+          <span>Remember Me</span>
+        </div>
+        <button id="submit" disabled>Submit</button>
+      </form>
+    </div>
+
+    <script>
+      const submitBtn = document.getElementById("submit");
+      const usrInput = document.getElementById("username");
+      const emailInput = document.getElementById("email");
+      const remCheckbox = document.getElementById("remember");
+      if (localStorage.getItem("username")) {
+        usrInput.value = localStorage.getItem("username");
+        emailInput.value = localStorage.getItem("email");
+        submitBtn.disabled = false;
+      }
+      const validateForm = () => {
+        const isUsernameValid = usrInput.checkValidity();
+        const isEmailValid = emailInput.checkValidity();
+        console.log(isUsernameValid, isEmailValid);
+        submitBtn.disabled = !(isUsernameValid && isEmailValid);
+      };
+
+      usrInput.addEventListener("input", validateForm);
+      emailInput.addEventListener("input", validateForm);
+      remCheckbox.addEventListener("change", validateForm);
+
+      document.getElementById("form").addEventListener("submit", (event) => {
+        // event.preventDefault();
+        if (remCheckbox.checked) {
+          localStorage.setItem("username", usrInput.value);
+          localStorage.setItem("email", emailInput.value);
+          alert("Data saved to Local storage!");
+        } else {
+          // alert("Data not Saved to Local Storage");
+        }
+      });
+    </script>
+  </body>
+</html>

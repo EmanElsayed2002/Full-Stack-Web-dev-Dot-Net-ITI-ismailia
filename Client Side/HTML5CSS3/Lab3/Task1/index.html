@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+    <style>
+      .grass {
+        margin: 200px auto;
+        position: relative;
+        background-image: url(../images/grass.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100vw;
+        height: 200px;
+      }
+      .player1,
+      .player2 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: -50px;
+      }
+      .player1 {
+        left: 0;
+      }
+      .player2 {
+        top: -80px;
+        left: 1250px;
+      }
+      .ball {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 70px;
+        left: 130px;
+        animation: spin 6s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          left: 130px;
+          transform: rotate(0deg);
+        }
+        39% {
+          left: 1300px;
+          transform: rotate(0deg);
+        }
+        40% {
+          left: 1300px;
+          transform: rotate(360deg);
+        }
+        51% {
+          left: 1300px;
+          transform: rotate(0deg);
+        }
+        52% {
+          left: 1300px;
+          transform: rotate(360deg);
+        }
+        53% {
+          left: 1300px;
+          transform: rotate(0deg);
+        }
+        100% {
+          left: 130px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grass">
+      <img class="player1" src="../images/player1.png" alt="" />
+      <img
+        class="ball"
+        id="ball"
+        src="../images/Black-Red_Egyptian_Soccer_ball.png"
+        alt=""
+      />
+      <img class="player2" src="../images/player2.png" alt="" />
+    </div>
+  </body>
+</html>

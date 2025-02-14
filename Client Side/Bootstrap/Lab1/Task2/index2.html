@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-color: aqua;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+      color: white;
+    }
+    header {
+      background-color: #5070b7;
+      padding: 10px;
+      flex: 0 0 auto;
+    }
+    .main-container {
+      display: flex;
+      flex: 1;
+      gap: 5px;
+    }
+    aside.one {
+      background-color: #b96021;
+      flex: 1;
+      line-height: 100px;
+    }
+    aside.two {
+      background-color: #b96021;
+      flex: 1;
+      line-height: 100px;
+    }
+    .content {
+      background-color: #81a43d;
+      flex: 3;
+      line-height: 100px;
+    }
+    footer {
+      background-color: #5070b7;
+      flex: 0 0 auto;
+    }
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+      aside.one,
+      aside.two {
+        flex: 1;
+      }
+      .content {
+        flex: 1;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+      .main-container {
+        flex-wrap: wrap;
+      }
+      aside.one {
+        flex: 1 1 100%;
+      }
+      .content {
+        flex: 2;
+      }
+      aside.two {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+  <body>
+    <header>Header</header>
+    <div class="main-container">
+      <aside class="one">Aside</aside>
+      <div class="content">Main Content</div>
+      <aside class="two">Aside</aside>
+    </div>
+    <footer>Footer</footer>
+  </body>
+</html>
